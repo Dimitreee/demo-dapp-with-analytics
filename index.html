@@ -7,12 +7,19 @@
     <title>Demo Dapp Analytics</title>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="%VITE_TG_ANALYTICS_URL%"></script>
+    <script 
+        async 
+        src="%VITE_TG_ANALYTICS_URL%" 
+        onload="initAnalytics()" 
+        type="text/javascript"
+    ></script>
     <script>
-      window.telegramAnalytics.init({
-        token: 'eyJhcHBfbmFtZSI6InRlc3RfYXBwIiwiYXBwX3VybCI6Imh0dHBzLy90Lm1lL3Nka19hbmFseXRpY3NfdGVzdF9ib3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9tYXN0ZXIuZDF0ZWZqN242bjJlZjAuYW1wbGlmeWFwcC5jb20vIn0=!0fw+ofoBDHN+fykKnUXy4HZ9DKkVRxtEhRKcWMyIuM4=',
-        appName: 'test_app',
-      })
+        function initAnalytics() {
+          window.telegramAnalytics.init({
+            token: 'eyJhcHBfbmFtZSI6InRlc3RfYXBwIiwiYXBwX3VybCI6Imh0dHBzLy90Lm1lL3Nka19hbmFseXRpY3NfdGVzdF9ib3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9tYXN0ZXIuZDF0ZWZqN242bjJlZjAuYW1wbGlmeWFwcC5jb20vIn0',
+            appName: 'test_app',
+          });
+        }
     </script>
   </head>
   <body>
